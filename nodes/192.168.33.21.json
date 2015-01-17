@@ -1,0 +1,28 @@
+{
+  "run_list": [
+    "recipe[emacs]",
+    "recipe[rvm::system]",
+    "recipe[sqlite]",
+    "recipe[mysql::server]",
+    "recipe[mysql::client]",
+    "recipe[git]",
+    "recipe[build-essential]",
+    "recipe[openssl]",
+    "recipe[nginx]"
+  ],
+  "automatic": {
+    "ipaddress": "192.168.33.21"
+  },
+  "rvm": {
+    "user": "root",
+    "default_ruby": "ruby-2.1",
+    "user_default_ruby": "ruby-2.1",
+    "rubies": ["ruby-2.1"]
+  },
+  "mysql":{
+    "version":"5.6",
+    "port":"3306",
+    "server_root_password":"vagrant",
+    "remove_anonymous_users":true
+    }
+}
